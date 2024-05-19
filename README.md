@@ -56,6 +56,24 @@ Run main executable:
 
 ## Structure of Project
 
+```bash
+.
+├── build            # all shared objects and executables here
+│   ├── libplugin.so
+│   ├── main
+│   └── plugin.o
+├── LICENSE
+├── makefile
+├── README.md
+├── resources        # Resources like fonts, icons, ...
+└── src              # Source codes and headers
+    ├── config.h     # Main config file
+    ├── hotreload.c
+    ├── main.c       # Setup screen here
+    ├── plugin.c     # Code here
+    └── plugin.h     # Design shared statets
+```
+
 ## Development
 If you have only made improvements related to memory management or drawing,
 run the following command while the `main` executable is running:
@@ -65,7 +83,11 @@ all files under the `src` folder and runs the `make hotreload` command
 in case of any changes (save, update or delete) so that when you update
 the code, it is automatically compiled. If the **build** is **successful**,
 you will see a **green** notification in the lower left corner of the screen
-else  you will see **red** notification. 
+else  you will see **red** notification.
+
+![Hotreload success](https://github.com/saracalihan/raylib-template/assets/56413673/8d7fcacd-0933-4894-8778-e22de56e2eaf)
+
+![Hotreload fail](https://github.com/saracalihan/raylib-template/assets/56413673/a07312fe-cef0-43e0-befb-4534413ade50)
 
 You can turn this feature off and on from the `src/config.h` file and
 determine which files will excluded in this feature.

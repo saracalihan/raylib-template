@@ -26,7 +26,7 @@ void* draw_hotreload_notfication(void* args)
     ts.tv_sec = 2 / 1000;
     ts.tv_nsec = (2 % 1000) * 1000000;
     time_t t = time(NULL);
-    while(time(NULL) - t < 2){ // Wait 2 sec
+    while(time(NULL) - t < 5){ // Wait 2 sec
         nanosleep(&ts, NULL);
         DrawRectangle(boxX-1, boxY-1, boxWidth+2, boxHeight+2, WHITE); // Border
         DrawRectangle(boxX, boxY, boxWidth, boxHeight, color); // Notfication Box
